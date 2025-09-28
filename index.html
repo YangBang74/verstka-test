@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Верстка с Bootstrap</title>
+
+    <!-- Google Fonts - Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body>
+    <!-- Bootstrap JS -->
+    <div class="wrapper">
+      <header class="header">
+        <div class="container">
+          <div class="row align-items-center justify-content-between">
+            <!-- Логотип -->
+            <div class="col-auto d-flex align-items-center">
+              <div class="logo">
+                <img
+                  src="assets/images/logo.svg"
+                  alt="ПИК СТРОИТЕЛЬНАЯ КОМПАНИЯ"
+                  class="logo-img" />
+              </div>
+              <div class="vertical-separator"></div>
+              <div class="col text-center">
+                <div class="contact-info">Отдел продаж: г. Чебоксары, ул. Энгельса 7</div>
+              </div>
+            </div>
+
+            <!-- Контактная информация -->
+
+            <!-- Кнопки -->
+            <div class="col-auto">
+              <div class="header-buttons">
+                <button class="btn btn-outline-light me-3">Связаться с нами</button>
+                <div class="search-toggle" id="searchToggle">
+                  <i class="fas fa-search"></i>
+                </div>
+                <div class="menu-toggle" id="menuToggle">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Выпадающее меню поиска -->
+        <div class="search-dropdown" id="searchDropdown">
+          <div class="container">
+            <div class="search-content">
+              <div class="search-close" id="searchClose">
+                <i class="fas fa-times"></i>
+              </div>
+              <div class="search-form">
+                <input type="text" placeholder="Поиск по сайту" class="search-input" />
+                <button class="search-btn">
+                  <i class="fas fa-search"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Выпадающее меню навигации -->
+        <div class="menu-dropdown" id="menuDropdown">
+          <div class="container">
+            <div class="menu-content">
+              <div class="row">
+                <!-- Контакты -->
+                <div class="col-md-3">
+                  <div class="menu-section">
+                    <div class="contact-info-menu">
+                      <div class="contact-item">EMAIL@MAIL.RU</div>
+                      <div class="contact-item">+7 904 724-01-69</div>
+                      <button class="btn btn-primary">Связаться с нами</button>
+                      <div class="address">
+                        Чувашия, г. Йошкар-Ола, ул. Сернурский тракт, 20, пом. 8
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Главная -->
+                <div class="col-md-2">
+                  <div class="menu-section">
+                    <h4>Главная</h4>
+                    <ul>
+                      <li><a href="#presentation">Презентация компании</a></li>
+                      <li><a href="#services">Кратко об услугах</a></li>
+                      <li><a href="#advantages">Преимущества</a></li>
+                      <li><a href="#geography">География строительства</a></li>
+                      <li><a href="#reviews">Отзывы</a></li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- Проекты -->
+                <div class="col-md-2">
+                  <div class="menu-section">
+                    <h4>Проекты</h4>
+                    <ul>
+                      <li><a href="#completed">Реализованные проекты</a></li>
+                      <li><a href="#current">Текущие проекты</a></li>
+                      <li><a href="#future">Будущие проекты</a></li>
+                      <li><a href="#map">Карта объектов</a></li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- О компании -->
+                <div class="col-md-2">
+                  <div class="menu-section">
+                    <h4>О компании</h4>
+                    <ul>
+                      <li><a href="#mission">Миссия и ценности</a></li>
+                      <li><a href="#certificates">Сертификаты и лицензии</a></li>
+                      <li><a href="#partners">Партнёры</a></li>
+                      <li><a href="#vacancies">Вакансии</a></li>
+                      <li><a href="#documents">Документы</a></li>
+                      <li><a href="#contacts">Контакты</a></li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- Технологии -->
+                <div class="col-md-2">
+                  <div class="menu-section">
+                    <h4>Технологии</h4>
+                    <ul>
+                      <li><a href="#construction-tech">Строительные технологии</a></li>
+                      <li><a href="#bim">BIM / цифровое проектирование</a></li>
+                      <li><a href="#energy">Энергоэффективность</a></li>
+                      <li><a href="#quality">Контроль качества</a></li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- Услуги -->
+                <div class="col-md-2">
+                  <div class="menu-section">
+                    <h4>Услуги</h4>
+                    <ul>
+                      <li><a href="#general-contract">Генеральный подряд</a></li>
+                      <li><a href="#residential">Жилое строительство</a></li>
+                      <li><a href="#industrial">Промышленное строительство</a></li>
+                      <li><a href="#warehouse">Складские комплексы</a></li>
+                      <li><a href="#design">Проектирование</a></li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- Новости -->
+                <div class="col-md-2">
+                  <div class="menu-section">
+                    <h4>Новости</h4>
+                    <ul>
+                      <li><a href="#company-news">Новости компании</a></li>
+                      <li><a href="#construction-progress">Ход строительства</a></li>
+                      <li><a href="#press-releases">Пресс-релизы</a></li>
+                      <li><a href="#industry-reviews">Обзоры отрасли</a></li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- Сотрудничество -->
+                <div class="col-md-2">
+                  <div class="menu-section">
+                    <h4>Сотрудничество</h4>
+                    <ul>
+                      <li><a href="#developers">Для застройщиков и инвесторов</a></li>
+                      <li><a href="#cooperation-terms">Условия сотрудничества</a></li>
+                      <li><a href="#faq">FAQ</a></li>
+                      <li><a href="#cost-calculation">Заявка на расчёт стоимости</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"></script>
+
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+  </body>
+</html>

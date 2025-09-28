@@ -1,0 +1,408 @@
+/* Custom styles */
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header Styles */
+.header {
+  background-color: rgba(0, 0, 0, 0.2);
+  color: #fff;
+  padding: 20px 0;
+  position: relative;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.header .container {
+  padding: 0 20px;
+}
+
+/* Logo Styles */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo-img {
+  height: 27px;
+  width: auto;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-main {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1;
+  color: #fff;
+}
+
+.logo-sub {
+  font-size: 10px;
+  font-weight: 300;
+  line-height: 1;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
+/* Vertical Separator */
+.vertical-separator {
+  width: 1px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.3);
+  margin: 0 20px;
+}
+
+/* Contact Info */
+.contact-info {
+  font-size: 14px;
+  font-weight: 400;
+  color: #fff;
+}
+
+/* Header Buttons */
+.header-buttons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.btn-outline-light {
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  color: #fff;
+  padding: 10px 24px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  background-color: transparent;
+}
+
+.btn-outline-light:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: #fff;
+  color: #fff;
+}
+
+/* Search Toggle */
+.search-toggle {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.search-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.search-toggle i {
+  color: #fff;
+  font-size: 16px;
+}
+
+/* Menu Toggle (Hamburger) */
+.menu-toggle {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  gap: 3px;
+}
+
+.menu-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.menu-toggle span {
+  width: 20px;
+  height: 2px;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+/* Search Dropdown */
+.search-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  display: none;
+}
+
+.search-dropdown.active {
+  display: block;
+}
+
+.search-content {
+  padding: 20px 0;
+  position: relative;
+}
+
+.search-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 30px;
+  height: 30px;
+  background-color: #8b4513;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.search-close:hover {
+  background-color: #a0522d;
+}
+
+.search-close i {
+  color: #fff;
+  font-size: 14px;
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.search-input {
+  flex: 1;
+  padding: 15px 20px;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  font-size: 16px;
+  outline: none;
+  background: transparent;
+}
+
+.search-input::placeholder {
+  color: #999;
+}
+
+.search-btn {
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.search-btn i {
+  color: #999;
+  font-size: 18px;
+}
+
+.search-btn:hover i {
+  color: #333;
+}
+
+/* Menu Dropdown */
+.menu-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: #f5f5dc;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  display: none;
+}
+
+.menu-dropdown.active {
+  display: block;
+}
+
+.menu-content {
+  padding: 40px 0;
+}
+
+.menu-section h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.menu-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-section ul li {
+  margin-bottom: 10px;
+}
+
+.menu-section ul li a {
+  color: #333;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 400;
+  transition: all 0.3s ease;
+}
+
+.menu-section ul li a:hover {
+  color: #8b4513;
+}
+
+/* Contact Info in Menu */
+.contact-info-menu {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.contact-item {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.contact-info-menu .btn {
+  margin: 15px 0;
+  background-color: #8b4513;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.contact-info-menu .btn:hover {
+  background-color: #a0522d;
+}
+
+.address {
+  font-size: 12px;
+  color: #666;
+  line-height: 1.4;
+  margin-top: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header .container {
+    padding: 0 15px;
+  }
+
+  .logo {
+    gap: 10px;
+  }
+
+  .logo-img {
+    height: 30px;
+  }
+
+  .logo-main {
+    font-size: 18px;
+  }
+
+  .logo-sub {
+    font-size: 8px;
+  }
+
+  .vertical-separator {
+    height: 30px;
+    margin: 0 10px;
+  }
+
+  .contact-info {
+    font-size: 12px;
+  }
+
+  .header-buttons {
+    gap: 10px;
+  }
+
+  .btn-outline-light {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+
+  .search-toggle,
+  .menu-toggle {
+    width: 35px;
+    height: 35px;
+  }
+
+  .menu-content {
+    padding: 20px 0;
+  }
+
+  .menu-section h4 {
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+
+  .menu-section ul li a {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 576px) {
+  .header {
+    padding: 15px 0;
+  }
+
+  .logo-text {
+    display: none;
+  }
+
+  .vertical-separator {
+    display: none;
+  }
+
+  .contact-info {
+    font-size: 10px;
+  }
+
+  .btn-outline-light {
+    padding: 6px 12px;
+    font-size: 10px;
+  }
+
+  .search-toggle,
+  .menu-toggle {
+    width: 32px;
+    height: 32px;
+  }
+}
