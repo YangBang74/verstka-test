@@ -131,4 +131,76 @@ document.addEventListener('DOMContentLoaded', function () {
       }, 1000)
     })
   }
+
+  // Hero button functionality
+  const heroBtn = document.querySelector('.btn-hero')
+  if (heroBtn) {
+    heroBtn.addEventListener('click', function () {
+      // Here you can add functionality for consultation request
+      console.log('Consultation requested')
+      // For now, show an alert
+      alert('Спасибо за интерес! Мы свяжемся с вами в ближайшее время.')
+    })
+  }
+
+  // Parallax effect for hero background
+  const heroBg = document.querySelector('.hero-bg-image')
+  if (heroBg) {
+    window.addEventListener('scroll', function () {
+      const scrolled = window.pageYOffset
+      const rate = scrolled * -0.5
+      heroBg.style.transform = `translateY(${rate}px)`
+    })
+  }
+
+  // About section button functionality
+  const aboutBtn = document.querySelector('.btn-about')
+  if (aboutBtn) {
+    aboutBtn.addEventListener('click', function () {
+      // Here you can add functionality for downloading presentation
+      console.log('Presentation download requested')
+      // For now, show an alert
+      alert('Презентация будет загружена. Спасибо за интерес!')
+    })
+  }
+
+  // Animate statistics on scroll
+  const statNumbers = document.querySelectorAll('.stat-number')
+  const observerOptions = {
+    threshold: 0.5,
+    rootMargin: '0px 0px -100px 0px',
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const target = entry.target
+        const finalNumber = parseInt(target.textContent)
+        animateNumber(target, 0, finalNumber, 2000)
+        observer.unobserve(target)
+      }
+    })
+  }, observerOptions)
+
+  statNumbers.forEach((number) => {
+    observer.observe(number)
+  })
+
+  function animateNumber(element, start, end, duration) {
+    const startTime = performance.now()
+
+    function updateNumber(currentTime) {
+      const elapsed = currentTime - startTime
+      const progress = Math.min(elapsed / duration, 1)
+
+      const currentNumber = Math.floor(start + (end - start) * progress)
+      element.textContent = currentNumber
+
+      if (progress < 1) {
+        requestAnimationFrame(updateNumber)
+      }
+    }
+
+    requestAnimationFrame(updateNumber)
+  }
 })
