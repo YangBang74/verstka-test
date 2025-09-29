@@ -2353,7 +2353,7 @@ body {
 
 .contact-form__title {
   font-size: 48px;
-  font-weight: 700;
+  font-weight: 500;
   color: #fff;
   margin: 0 0 20px 0;
   line-height: 1.2;
@@ -2411,10 +2411,6 @@ body {
   transform: scale(1.1);
 }
 
-.contact-form__form {
-  max-width: 500px;
-}
-
 .contact-form__inputs {
   display: flex;
   gap: 20px;
@@ -2447,14 +2443,6 @@ body {
 .contact-form__input::placeholder {
   color: #999;
   font-weight: 400;
-}
-
-.contact-form__input--phone {
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="15" viewBox="0 0 20 15"><rect width="20" height="15" fill="%23d4af37"/><text x="10" y="10" text-anchor="middle" font-size="8" fill="white">RU</text></svg>');
-  background-repeat: no-repeat;
-  background-position: 15px center;
-  background-size: 20px 15px;
-  padding-left: 50px;
 }
 
 .contact-form__submit {
@@ -2492,15 +2480,15 @@ body {
 }
 
 .contact-form__privacy-link {
-  color: #97775e;
+  color: #ffffff;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
+  text-decoration: underline;
 }
 
 .contact-form__privacy-link:hover {
-  color: #a0522d;
-  text-decoration: underline;
+  color: rgb(233, 233, 233);
 }
 
 .contact-form__right {
@@ -2559,8 +2547,9 @@ body {
     max-width: 100%;
   }
 
-  .contact-form__form {
-    max-width: 100%;
+  .contact-form::before {
+    display: none;
+    background-color: transparent;
   }
 
   .contact-form__inputs {
@@ -2573,12 +2562,7 @@ body {
   }
 
   .contact-form__right {
-    flex: none;
-    order: -1;
-  }
-
-  .contact-form__phone-image {
-    max-width: 200px;
+    display: none;
   }
 }
 
