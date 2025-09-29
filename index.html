@@ -35,40 +35,56 @@
     <div class="wrapper">
       <header class="header">
         <div class="container">
-          <div class="row align-items-center justify-content-between">
-            <!-- Логотип -->
-            <div class="col-auto d-flex align-items-center">
-              <div class="logo">
-                <img
-                  src="assets/images/logo.svg"
-                  alt="ПИК СТРОИТЕЛЬНАЯ КОМПАНИЯ"
-                  class="logo-img" />
-              </div>
-              <div class="vertical-separator">
-                <div class="vertical-separator-line"></div>
-              </div>
-              <div class="col text-center">
-                <div class="contact-info">Отдел продаж: г. Чебоксары, ул. Энгельса 7</div>
-              </div>
-            </div>
-
-            <!-- Контактная информация -->
-
-            <!-- Кнопки -->
-            <div class="col-auto">
-              <div class="header-buttons">
-                <button class="btn btn-outline-light me-3">Связаться с нами</button>
-                <div class="header__actions">
-                  <button type="button" class="search-toggle" id="searchToggle">
-                    <i class="fas fa-search"></i>
-                  </button>
-                  <button type="button" class="menu-toggle" id="menuToggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                  </button>
+          <!-- Desktop Version -->
+          <div class="header__desktop">
+            <div class="row align-items-center justify-content-between">
+              <!-- Логотип -->
+              <div class="col-auto d-flex align-items-center">
+                <div class="logo">
+                  <img
+                    src="assets/images/logo.svg"
+                    alt="ПИК СТРОИТЕЛЬНАЯ КОМПАНИЯ"
+                    class="logo-img" />
+                </div>
+                <div class="vertical-separator">
+                  <div class="vertical-separator-line"></div>
+                </div>
+                <div class="col text-center">
+                  <div class="contact-info">Отдел продаж: г. Чебоксары, ул. Энгельса 7</div>
                 </div>
               </div>
+
+              <!-- Кнопки -->
+              <div class="col-auto">
+                <div class="header-buttons">
+                  <button class="btn btn-outline-light me-3">Связаться с нами</button>
+                  <div class="header__actions">
+                    <button type="button" class="search-toggle" id="searchToggle">
+                      <i class="fas fa-search"></i>
+                    </button>
+                    <button type="button" class="menu-toggle" id="menuToggle">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mobile Version -->
+          <div class="header__mobile">
+            <div class="header__mobile-content">
+              <div class="header__mobile-logo">
+                <img src="assets/images/logo-2.svg" alt="ПИК" class="header__mobile-logo-img" />
+              </div>
+              <button type="button" class="header__mobile-menu-toggle" id="mobileMenuToggle">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <i class="fas fa-times close-icon"></i>
+              </button>
             </div>
           </div>
         </div>
@@ -90,7 +106,7 @@
           </div>
         </div>
 
-        <!-- Выпадающее меню навигации -->
+        <!-- Desktop Menu -->
         <div class="menu-dropdown" id="menuDropdown">
           <div class="container">
             <div class="menu-content">
@@ -220,6 +236,28 @@
             </div>
           </div>
         </div>
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+          <div class="mobile-menu__content">
+            <nav class="mobile-menu__nav">
+              <a href="#about" class="mobile-menu__link">О проекте</a>
+              <a href="#layouts" class="mobile-menu__link">Планировки</a>
+              <a href="#purchase" class="mobile-menu__link">Способы покупки</a>
+              <a href="#gallery" class="mobile-menu__link">Галерея</a>
+              <a href="#contacts" class="mobile-menu__link">Контакты</a>
+            </nav>
+
+            <button class="mobile-menu__call-btn">Позвонить</button>
+
+            <div class="mobile-menu__contact">
+              <div class="mobile-menu__phone">+7 (843) 212-18-98</div>
+              <div class="mobile-menu__project">ЖК «Чехов»</div>
+              <div class="mobile-menu__address">
+                Адрес: 420010, Республика Чувашия, г. Чебоксары, ул. Энгельса, д. 3, к. 1
+              </div>
+            </div>
+          </div>
+        </div>
       </header>
 
       <!-- Hero Section -->
@@ -252,14 +290,14 @@
         <div class="container">
           <div class="row align-items-center">
             <!-- Image Column -->
-            <div class="col-lg-6">
+            <div class="col-lg-4">
               <div class="about-image">
                 <img src="assets/images/about-img.png" alt="О компании ПИК" class="about-img" />
               </div>
             </div>
 
             <!-- Content Column -->
-            <div class="col-lg-6">
+            <div class="col-lg-8">
               <div class="about-content">
                 <h2 class="about-title">О компании</h2>
                 <div class="about-text">
@@ -417,6 +455,11 @@
                 </div>
               </div>
             </div>
+          </div>
+
+          <!-- Кнопка для мобильной версии -->
+          <div class="services__mobile-more">
+            <button class="services__more-btn services__more-btn--mobile">Узнать больше</button>
           </div>
         </div>
       </section>
@@ -587,6 +630,11 @@
                 </div>
               </div>
             </div>
+          </div>
+
+          <!-- Кнопка для мобильной версии -->
+          <div class="geography__mobile-more">
+            <button class="geography__more-btn geography__more-btn--mobile">Узнать больше</button>
           </div>
         </div>
       </section>

@@ -14,6 +14,109 @@ body {
   position: fixed;
   z-index: 1000;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+/* Header при скролле */
+.header.scrolled {
+  background-color: #fff;
+  color: #333;
+  border-bottom: 1px solid #e0e0e0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Desktop Header */
+.header__desktop {
+  display: block;
+}
+
+/* Mobile Header */
+.header__mobile {
+  display: none;
+}
+
+.header__mobile-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.header__mobile-logo {
+  display: flex;
+  align-items: center;
+}
+
+.header__mobile-logo-img {
+  height: 30px;
+  width: auto;
+}
+
+.header__mobile-title {
+  font-size: 18px;
+  font-weight: 500;
+  color: #333;
+  flex: 1;
+  text-align: center;
+  margin: 0 20px;
+  transition: color 0.3s ease;
+}
+
+/* Мобильный заголовок при скролле */
+.header.scrolled .header__mobile-title {
+  color: #333;
+}
+
+.header__mobile-menu-toggle {
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  gap: 3px;
+  position: relative;
+}
+
+.hamburger-line {
+  width: 20px;
+  height: 2px;
+  background-color: #333;
+  transition: all 0.3s ease;
+  display: block;
+}
+
+/* Мобильное бургер-меню при скролле */
+.header.scrolled .hamburger-line {
+  background-color: #333;
+}
+
+.close-icon {
+  position: absolute;
+  font-size: 18px;
+  color: #333;
+  opacity: 0;
+  transform: rotate(90deg);
+  transition: all 0.3s ease;
+}
+
+/* Иконка закрытия при скролле */
+.header.scrolled .close-icon {
+  color: #333;
+}
+
+/* Анимация при открытом меню */
+.header__mobile-menu-toggle.active .hamburger-line {
+  opacity: 0;
+  transform: scale(0);
+}
+
+.header__mobile-menu-toggle.active .close-icon {
+  opacity: 1;
+  transform: rotate(0deg);
 }
 
 .header .container {
@@ -30,7 +133,10 @@ body {
 .logo-img {
   height: 27px;
   width: auto;
+  transition: all 0.3s ease;
 }
+
+/* Логотип при скролле - убираем CSS content, используем JavaScript */
 
 .logo-text {
   display: flex;
@@ -74,16 +180,24 @@ body {
   font-size: 14px;
   font-weight: 400;
   color: #fff;
+  transition: color 0.3s ease;
+}
+
+/* Contact info при скролле */
+.header.scrolled .contact-info {
+  color: #333;
 }
 
 /* Header Buttons */
 .header-buttons {
+  color: #fff;
   display: flex;
   align-items: center;
   gap: 15px;
 }
 
 .header__actions {
+  color: #fff;
   display: flex;
   align-items: center;
   background-color: rgba(255, 255, 255, 0.1);
@@ -110,6 +224,18 @@ body {
   color: #fff;
 }
 
+/* Кнопка при скролле */
+.header.scrolled .btn-outline-light {
+  color: #333;
+  border-color: #333;
+}
+
+.header.scrolled .btn-outline-light:hover {
+  background-color: rgba(51, 51, 51, 0.1);
+  border-color: #333;
+  color: #333;
+}
+
 /* Search Toggle */
 .search-toggle {
   width: 40px;
@@ -131,6 +257,12 @@ body {
 .search-toggle i {
   color: #fff;
   font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+/* Иконки при скролле */
+.header.scrolled .search-toggle i {
+  color: #333;
 }
 
 .search-toggle::after {
@@ -166,6 +298,11 @@ body {
   height: 2px;
   background-color: #fff;
   transition: all 0.3s ease;
+}
+
+/* Бургер-меню при скролле */
+.header.scrolled .menu-toggle span {
+  background-color: #333;
 }
 
 .menu-buttons {
@@ -220,16 +357,14 @@ body {
 .search-form {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 10px;
-  max-width: 600px;
-  margin: 0 auto;
 }
 
 .search-input {
   flex: 1;
   padding: 15px 20px;
   border: none;
+  max-width: 80%;
   border-bottom: 1px solid #ddd;
   font-size: 16px;
   outline: none;
@@ -261,7 +396,7 @@ body {
   color: #333;
 }
 
-/* Menu Dropdown */
+/* Desktop Menu Dropdown */
 .menu-dropdown {
   position: fixed;
   top: 100%;
@@ -276,6 +411,133 @@ body {
 
 .menu-dropdown.active {
   display: block;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  position: fixed;
+  top: 61px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  z-index: 1001;
+  display: none;
+  flex-direction: column;
+}
+
+.mobile-menu.active {
+  display: flex;
+}
+
+.mobile-menu__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.mobile-menu__logo {
+  display: flex;
+  align-items: center;
+}
+
+.mobile-menu__logo-img {
+  height: 30px;
+  width: auto;
+}
+
+.mobile-menu__title {
+  font-size: 18px;
+  font-weight: 500;
+  color: #333;
+  flex: 1;
+  text-align: center;
+  margin: 0 20px;
+}
+
+.mobile-menu__close {
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #333;
+  font-size: 18px;
+}
+
+.mobile-menu__content {
+  flex: 1;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.mobile-menu__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.mobile-menu__link {
+  font-size: 18px;
+  font-weight: 500;
+  color: #333;
+  text-decoration: none;
+  padding: 10px 0;
+  border-bottom: 1px solid #f0f0f0;
+  transition: color 0.3s ease;
+}
+
+.mobile-menu__link:hover {
+  color: #97775e;
+}
+
+.mobile-menu__call-btn {
+  background-color: #333;
+  border: none;
+  color: #fff;
+  padding: 15px 30px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+}
+
+.mobile-menu__call-btn:hover {
+  background-color: #555;
+  transform: translateY(-2px);
+}
+
+.mobile-menu__contact {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mobile-menu__phone {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+.mobile-menu__project {
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+}
+
+.mobile-menu__address {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.4;
 }
 
 .menu-content {
@@ -367,10 +629,33 @@ body {
   margin-top: 10px;
 }
 
+@media (max-width: 998px) {
+  .contact-info {
+    display: none;
+  }
+  .vertical-separator {
+    display: none;
+  }
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
+  /* Hide desktop header, show mobile */
+  .header__desktop {
+    display: none;
+  }
+
+  .header__mobile {
+    display: block;
+  }
+
+  .header {
+    background-color: #fff;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
   .header .container {
-    padding: 0 15px;
+    padding: 0;
   }
 
   .logo {
@@ -940,6 +1225,33 @@ body {
   width: 100%;
 }
 
+/* Services Mobile More Button */
+.services__mobile-more {
+  display: none;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.services__more-btn--mobile {
+  background-color: #97775e;
+  border: none;
+  color: #fff;
+  padding: 15px 30px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.services__more-btn--mobile:hover {
+  background-color: #a0522d;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(151, 119, 94, 0.3);
+}
+
 /* Services Responsive */
 @media (max-width: 1200px) {
   .services {
@@ -963,6 +1275,7 @@ body {
   .services__header {
     flex-direction: column;
     gap: 30px;
+    margin-bottom: 10px;
   }
 
   .services__text {
@@ -984,6 +1297,20 @@ body {
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
+  }
+
+  /* Скрываем навигаторы в мобильной версии */
+  .services__navigation {
+    display: none;
+  }
+
+  /* Скрываем десктопную кнопку и показываем мобильную */
+  .services__more-btn:not(.services__more-btn--mobile) {
+    display: none;
+  }
+
+  .services__mobile-more {
+    display: block;
   }
 
   .services__slide {
@@ -1015,6 +1342,20 @@ body {
   .services__controls {
     flex-direction: column;
     gap: 15px;
+  }
+
+  /* Скрываем навигаторы в мобильной версии */
+  .services__navigation {
+    display: none;
+  }
+
+  /* Скрываем десктопную кнопку и показываем мобильную */
+  .services__more-btn:not(.services__more-btn--mobile) {
+    display: none;
+  }
+
+  .services__mobile-more {
+    display: block;
   }
 
   .services__slide {
@@ -1530,6 +1871,33 @@ body {
   opacity: 0.9;
 }
 
+/* Geography Mobile More Button */
+.geography__mobile-more {
+  display: none;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.geography__more-btn--mobile {
+  background-color: #97775e;
+  border: none;
+  color: #fff;
+  padding: 15px 30px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.geography__more-btn--mobile:hover {
+  background-color: #a0522d;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(151, 119, 94, 0.3);
+}
+
 /* Geography Responsive */
 @media (max-width: 1200px) {
   .geography {
@@ -1553,6 +1921,7 @@ body {
   .geography__header {
     flex-direction: column;
     gap: 30px;
+    margin-bottom: 0px;
   }
 
   .geography__text {
@@ -1574,6 +1943,20 @@ body {
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
+  }
+
+  /* Скрываем навигаторы в мобильной версии */
+  .geography__navigation {
+    display: none;
+  }
+
+  /* Скрываем десктопную кнопку и показываем мобильную */
+  .geography__more-btn:not(.geography__more-btn--mobile) {
+    display: none;
+  }
+
+  .geography__mobile-more {
+    display: block;
   }
 
   .geography__slide {
@@ -1605,6 +1988,20 @@ body {
   .geography__controls {
     flex-direction: column;
     gap: 15px;
+  }
+
+  /* Скрываем навигаторы в мобильной версии */
+  .geography__navigation {
+    display: none;
+  }
+
+  /* Скрываем десктопную кнопку и показываем мобильную */
+  .geography__more-btn:not(.geography__more-btn--mobile) {
+    display: none;
+  }
+
+  .geography__mobile-more {
+    display: block;
   }
 
   .geography__slide {
@@ -1645,6 +2042,7 @@ body {
   }
 
   .about .row {
+    align-items: start;
     flex-direction: column;
   }
 
@@ -1703,6 +2101,8 @@ body {
 
   .about-img {
     height: 300px;
+    width: 100%;
+    object-fit: cover;
   }
 
   .about-logo {
@@ -2135,7 +2535,7 @@ body {
   }
 
   .video-testimonial__content {
-    padding: 25px;
+    padding: 25px 0;
   }
 
   .video-testimonial__quote {
@@ -2181,7 +2581,7 @@ body {
   }
 
   .video-testimonial__content {
-    padding: 20px;
+    padding: 20px 0;
   }
 
   .video-testimonial__quote {
@@ -2237,7 +2637,7 @@ body {
   }
 
   .video-testimonial__content {
-    padding: 25px;
+    padding: 25px 0;
   }
 
   .video-testimonial__quote {
@@ -2292,7 +2692,7 @@ body {
   }
 
   .video-testimonial__content {
-    padding: 20px;
+    padding: 20px 0;
   }
 
   .video-testimonial__quote {
@@ -2537,6 +2937,9 @@ body {
 }
 
 @media (max-width: 992px) {
+  .contact-form {
+    padding: 50px 0;
+  }
   .contact-form__content {
     flex-direction: column;
     text-align: center;
@@ -2977,6 +3380,7 @@ body {
 .footer__center {
   flex: 1;
   display: flex;
+  justify-content: flex-end;
   align-items: flex-start;
   gap: 40px;
 }

@@ -11,6 +11,16 @@ document.addEventListener('DOMContentLoaded', function () {
   const searchInput = document.querySelector('.search-input')
   const searchBtn = document.querySelector('.search-btn')
 
+  // Mobile menu functionality
+  const mobileMenuToggle = document.getElementById('mobileMenuToggle')
+  const mobileMenu = document.getElementById('mobileMenu')
+  const mobileMenuClose = document.getElementById('mobileMenuClose')
+
+  // Header scroll functionality
+  const header = document.querySelector('.header')
+  const logoImg = document.querySelector('.logo-img')
+  const mobileLogoImg = document.querySelector('.header__mobile-logo-img')
+
   // Toggle search dropdown
   if (searchToggle) {
     searchToggle.addEventListener('click', function () {
@@ -49,6 +59,112 @@ document.addEventListener('DOMContentLoaded', function () {
     searchClose.addEventListener('click', function () {
       searchDropdown.classList.remove('active')
     })
+  }
+
+  // Toggle mobile menu
+  if (mobileMenuToggle) {
+    mobileMenuToggle.addEventListener('click', function () {
+      if (mobileMenu.classList.contains('active')) {
+        // Закрываем меню
+        mobileMenu.classList.remove('active')
+        mobileMenuToggle.classList.remove('active')
+        document.body.style.overflow = ''
+      } else {
+        // Открываем меню
+        mobileMenu.classList.add('active')
+        mobileMenuToggle.classList.add('active')
+        document.body.style.overflow = 'hidden'
+      }
+    })
+  }
+
+  // Close mobile menu (если есть отдельная кнопка закрытия)
+  if (mobileMenuClose) {
+    mobileMenuClose.addEventListener('click', function () {
+      mobileMenu.classList.remove('active')
+      mobileMenuToggle.classList.remove('active')
+      document.body.style.overflow = ''
+    })
+  }
+
+  // Close mobile menu when clicking outside
+  if (mobileMenu) {
+    mobileMenu.addEventListener('click', function (e) {
+      if (e.target === mobileMenu) {
+        mobileMenu.classList.remove('active')
+        mobileMenuToggle.classList.remove('active')
+        document.body.style.overflow = ''
+      }
+    })
+  }
+
+  // Header scroll effect
+  function handleScroll() {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop
+
+    if (scrollTop > 30) {
+      header.classList.add('scrolled')
+      console.log('Scrolled - changing to logo-2')
+      // Меняем логотип на logo-2 для десктопной версии
+      if (logoImg) {
+        logoImg.src = 'assets/images/logo-2.svg'
+        logoImg.onerror = function () {
+          console.error('Failed to load logo-2.svg for desktop')
+        }
+        logoImg.onload = function () {
+          console.log('Desktop logo-2.svg loaded successfully')
+        }
+        console.log('Desktop logo changed to logo-2')
+      }
+      // Меняем логотип на logo-2 для мобильной версии
+      if (mobileLogoImg) {
+        mobileLogoImg.src = 'assets/images/logo-2.svg'
+        mobileLogoImg.onerror = function () {
+          console.error('Failed to load logo-2.svg for mobile')
+        }
+        mobileLogoImg.onload = function () {
+          console.log('Mobile logo-2.svg loaded successfully')
+        }
+        console.log('Mobile logo changed to logo-2')
+      }
+    } else {
+      header.classList.remove('scrolled')
+      console.log('Not scrolled - changing to logo')
+      // Возвращаем оригинальный логотип для десктопной версии
+      if (logoImg) {
+        logoImg.src = 'assets/images/logo.svg'
+        logoImg.onerror = function () {
+          console.error('Failed to load logo.svg for desktop')
+        }
+        logoImg.onload = function () {
+          console.log('Desktop logo.svg loaded successfully')
+        }
+        console.log('Desktop logo changed to logo')
+      }
+      // Возвращаем оригинальный логотип для мобильной версии
+      if (mobileLogoImg) {
+        mobileLogoImg.src = 'assets/images/logo.svg'
+        mobileLogoImg.onerror = function () {
+          console.error('Failed to load logo.svg for mobile')
+        }
+        mobileLogoImg.onload = function () {
+          console.log('Mobile logo.svg loaded successfully')
+        }
+        console.log('Mobile logo changed to logo')
+      }
+    }
+  }
+
+  // Добавляем обработчик скролла только если header существует
+  if (header) {
+    window.addEventListener('scroll', handleScroll)
+    console.log('Scroll handler added')
+
+    // Проверяем начальное состояние
+    console.log('Initial scroll position:', window.pageYOffset)
+    handleScroll()
+  } else {
+    console.log('Header not found')
   }
 
   // Search functionality
