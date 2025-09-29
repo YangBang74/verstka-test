@@ -2369,7 +2369,13 @@ body {
 
 .contact-form__managers {
   display: flex;
+  align-items: center;
+  gap: 20px;
   margin-bottom: 40px;
+}
+
+.contact-form__managers-avatars {
+  display: flex;
 }
 
 .contact-form__manager {
@@ -2379,6 +2385,18 @@ body {
 
 .contact-form__manager:first-child {
   margin-left: 0;
+}
+
+.contact-form__managers-text {
+  display: flex;
+  align-items: center;
+}
+
+.contact-form__managers-label {
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  white-space: nowrap;
 }
 
 .contact-form__avatar {
@@ -2580,6 +2598,11 @@ body {
   .contact-form__managers {
     justify-content: center;
     margin-bottom: 30px;
+    gap: 15px;
+  }
+
+  .contact-form__managers-label {
+    font-size: 14px;
   }
 
   .contact-form__avatar {
@@ -2633,6 +2656,7 @@ body {
 
   .contact-form__managers {
     margin-bottom: 25px;
+    gap: 10px;
   }
 
   .contact-form__manager {
@@ -2641,6 +2665,10 @@ body {
 
   .contact-form__manager:first-child {
     margin-left: 0;
+  }
+
+  .contact-form__managers-label {
+    font-size: 13px;
   }
 
   .contact-form__avatar {
