@@ -105,6 +105,40 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   })
 
+  // Menu buttons functionality (inside dropdown)
+  const menuSearchToggle = document.getElementById('menuSearchToggle')
+  const menuMenuToggle = document.getElementById('menuMenuToggle')
+
+  // First button: close menu and open search
+  if (menuSearchToggle) {
+    menuSearchToggle.addEventListener('click', function () {
+      // Close menu
+      if (menuDropdown.classList.contains('active')) {
+        menuDropdown.classList.remove('active')
+      }
+
+      // Open search
+      searchDropdown.classList.add('active')
+
+      // Focus on search input
+      setTimeout(() => {
+        if (searchInput) {
+          searchInput.focus()
+        }
+      }, 100)
+    })
+  }
+
+  // Second button: just close menu
+  if (menuMenuToggle) {
+    menuMenuToggle.addEventListener('click', function () {
+      // Close menu
+      if (menuDropdown.classList.contains('active')) {
+        menuDropdown.classList.remove('active')
+      }
+    })
+  }
+
   // Smooth scrolling for anchor links
   const anchorLinks = document.querySelectorAll('a[href^="#"]')
   anchorLinks.forEach((link) => {
@@ -202,5 +236,108 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     requestAnimationFrame(updateNumber)
+  }
+
+  // Services Slider
+  const servicesSlider = document.querySelector('.services__slider')
+  if (servicesSlider) {
+    const swiper = new Swiper('.services__slider', {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      loop: true,
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+      },
+      navigation: {
+        nextEl: '.services__nav-btn--next',
+        prevEl: '.services__nav-btn--prev',
+      },
+      breakpoints: {
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 30,
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 30,
+        },
+        1200: {
+          slidesPerView: 3,
+          spaceBetween: 40,
+        },
+      },
+    })
+
+    // Service card links functionality
+    const serviceLinks = document.querySelectorAll('.service-card__link')
+    serviceLinks.forEach((link) => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault()
+        const serviceTitle =
+          this.closest('.service-card').querySelector('.service-card__title').textContent
+        console.log('Service selected:', serviceTitle)
+        alert(`Вы выбрали услугу: ${serviceTitle}`)
+      })
+    })
+
+    // Services more button functionality
+    const servicesMoreBtn = document.querySelector('.services__more-btn')
+    if (servicesMoreBtn) {
+      servicesMoreBtn.addEventListener('click', function () {
+        console.log('Learn more about services clicked')
+        alert('Переход к подробной информации об услугах')
+      })
+    }
+
+    // Why choose us button functionality
+    const whyChooseBtn = document.querySelector('.why-choose__btn')
+    if (whyChooseBtn) {
+      whyChooseBtn.addEventListener('click', function () {
+        console.log('Why choose us button clicked')
+        alert('Переход к подробной информации о преимуществах')
+      })
+    }
+
+    // Geography Slider
+    const geographySlider = document.querySelector('.geography__slider')
+    if (geographySlider) {
+      const swiper = new Swiper('.geography__slider', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+        },
+        navigation: {
+          nextEl: '.geography__nav-btn--next',
+          prevEl: '.geography__nav-btn--prev',
+        },
+        breakpoints: {
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 30,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
+          1200: {
+            slidesPerView: 3,
+            spaceBetween: 40,
+          },
+        },
+      })
+    }
+
+    // Geography more button functionality
+    const geographyMoreBtn = document.querySelector('.geography__more-btn')
+    if (geographyMoreBtn) {
+      geographyMoreBtn.addEventListener('click', function () {
+        console.log('Geography more button clicked')
+        alert('Переход к подробной информации о географии строительства')
+      })
+    }
   }
 })

@@ -19,6 +19,9 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous" />
 
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
     <!-- Font Awesome -->
     <link
       rel="stylesheet"
@@ -41,7 +44,9 @@
                   alt="ПИК СТРОИТЕЛЬНАЯ КОМПАНИЯ"
                   class="logo-img" />
               </div>
-              <div class="vertical-separator"></div>
+              <div class="vertical-separator">
+                <div class="vertical-separator-line"></div>
+              </div>
               <div class="col text-center">
                 <div class="contact-info">Отдел продаж: г. Чебоксары, ул. Энгельса 7</div>
               </div>
@@ -53,13 +58,15 @@
             <div class="col-auto">
               <div class="header-buttons">
                 <button class="btn btn-outline-light me-3">Связаться с нами</button>
-                <div class="search-toggle" id="searchToggle">
-                  <i class="fas fa-search"></i>
-                </div>
-                <div class="menu-toggle" id="menuToggle">
-                  <span></span>
-                  <span></span>
-                  <span></span>
+                <div class="header__actions">
+                  <button type="button" class="search-toggle" id="searchToggle">
+                    <i class="fas fa-search"></i>
+                  </button>
+                  <button type="button" class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </button>
                 </div>
               </div>
             </div>
@@ -87,20 +94,23 @@
         <div class="menu-dropdown" id="menuDropdown">
           <div class="container">
             <div class="menu-content">
-              <div class="row">
-                <!-- Контакты -->
-                <div class="col-md-3">
-                  <div class="menu-section">
-                    <div class="contact-info-menu">
-                      <div class="contact-item">EMAIL@MAIL.RU</div>
-                      <div class="contact-item">+7 904 724-01-69</div>
-                      <button class="btn btn-primary">Связаться с нами</button>
-                      <div class="address">
-                        Чувашия, г. Йошкар-Ола, ул. Сернурский тракт, 20, пом. 8
-                      </div>
+              <div class="">
+                <div class="menu-logo">
+                  <img src="/assets/images/logo-2.svg" alt="Logo" />
+                </div>
+                <div class="menu-section">
+                  <div class="contact-info-menu">
+                    <div class="contact-item">EMAIL@MAIL.RU</div>
+                    <div class="contact-item">+7 904 724-01-69</div>
+                    <button class="btn btn-primary nowrap">Связаться с нами</button>
+                    <div class="address">
+                      Чувашия, г. Йошкар-Ола, ул. Сернурский тракт, 20, пом. 8
                     </div>
                   </div>
                 </div>
+              </div>
+              <div class="row gap-2">
+                <!-- Контакты -->
 
                 <!-- Главная -->
                 <div class="col-md-2">
@@ -197,6 +207,16 @@
                   </div>
                 </div>
               </div>
+              <div class="menu-content-right">
+                <div class="header__actions menu-buttons">
+                  <button type="button" class="search-toggle" id="menuSearchToggle">
+                    <i class="fas fa-search"></i>
+                  </button>
+                  <button type="button" class="menu-toggle" id="menuMenuToggle">
+                    <span></span>
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -207,7 +227,6 @@
         <!-- <div class="hero-background">
           <img src="assets/images/hero-background.png" alt="Строительство" class="hero-bg-image" />
         </div> -->
-        <div class="hero-overlay"></div>
         <div class="container">
           <div class="row">
             <div class="col-lg-6">
@@ -291,11 +310,465 @@
           </div>
         </div>
       </section>
+
+      <!-- Services Section -->
+      <section class="services">
+        <div class="container">
+          <div class="services__header">
+            <div class="services__text">
+              <h2 class="services__title">Услуги</h2>
+              <p class="services__subtitle">
+                Мы создали множество преимуществ для жителей ЖК «Чехов». Каждая деталь важна для
+                современного человека, который ценит комфорт и удобство.
+              </p>
+            </div>
+            <div class="services__controls">
+              <div class="services__navigation">
+                <button class="services__nav-btn services__nav-btn--prev" type="button">
+                  <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="services__nav-btn services__nav-btn--next" type="button">
+                  <i class="fas fa-chevron-right"></i>
+                </button>
+              </div>
+              <button class="services__more-btn">Узнать больше</button>
+            </div>
+          </div>
+
+          <div class="services__slider swiper">
+            <div class="services__wrapper swiper-wrapper">
+              <div class="services__slide swiper-slide">
+                <div class="service-card">
+                  <div class="service-card__image">
+                    <img src="assets/images/services-1.png" alt="Генеральный подряд" />
+                  </div>
+                  <div class="service-card__overlay"></div>
+                  <div class="service-card__content">
+                    <h3 class="service-card__title">Генеральный подряд</h3>
+                    <p class="service-card__description">
+                      Комплексное ведение проектов: от разрешений и документации до сдачи объекта в
+                      эксплуатацию
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="services__slide swiper-slide">
+                <div class="service-card">
+                  <div class="service-card__image">
+                    <img src="assets/images/services-2.png" alt="Проектирование объектов" />
+                  </div>
+                  <div class="service-card__overlay"></div>
+                  <div class="service-card__content">
+                    <h3 class="service-card__title">Проектирование объектов</h3>
+                    <p class="service-card__description">
+                      Жилые, коммерческие, промышленные здания, логистические комплексы и
+                      инфраструктурные решения
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="services__slide swiper-slide">
+                <div class="service-card">
+                  <div class="service-card__image">
+                    <img src="assets/images/servises-3.png" alt="Инженерные сети" />
+                  </div>
+                  <div class="service-card__overlay"></div>
+                  <div class="service-card__content">
+                    <h3 class="service-card__title">Инженерные сети</h3>
+                    <p class="service-card__description">
+                      Электроснабжение, отопление, вода, газ и вентиляция, телекоммуникации и
+                      системы безопасности
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="services__slide swiper-slide">
+                <div class="service-card">
+                  <div class="service-card__image">
+                    <img src="assets/images/servises-4.png" alt="Капремонт и реконструкция" />
+                  </div>
+                  <div class="service-card__overlay"></div>
+                  <div class="service-card__content">
+                    <h3 class="service-card__title">Капремонт и реконструкция</h3>
+                    <p class="service-card__description">
+                      Обновление и модернизация зданий любого назначения с учётом норм и современных
+                      технологий
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="services__slide swiper-slide">
+                <div class="service-card">
+                  <div class="service-card__image">
+                    <img src="assets/images/servises-5.png" alt="Эксплуатация и обслуживание" />
+                  </div>
+                  <div class="service-card__overlay"></div>
+                  <div class="service-card__content">
+                    <h3 class="service-card__title">Эксплуатация и обслуживание</h3>
+                    <p class="service-card__description">
+                      Профессиональное управление объектами, снижение издержек и повышение
+                      эффективности
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Why Choose Us Section -->
+      <section class="why-choose">
+        <div class="container">
+          <div class="why-choose__grid">
+            <!-- Main Title Block -->
+            <div class="why-choose__main-card">
+              <!-- <div class="why-choose__main-image">
+                <img src="assets/images/why.png" alt="Почему нам доверяют" />
+              </div> -->
+              <div class="why-choose__main-content">
+                <h2 class="why-choose__main-title">
+                  Почему нам <br />
+                  доверяют по всей России
+                </h2>
+              </div>
+            </div>
+
+            <!-- Feature Cards -->
+            <div class="why-choose__feature-card">
+              <div class="why-choose__feature-icon">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <div class="why-choose__feature-content">
+                <h3 class="why-choose__feature-title">Надёжность</h3>
+                <p class="why-choose__feature-description">
+                  Работаем по стандартам, используем проверенные материалы
+                </p>
+              </div>
+            </div>
+
+            <div class="why-choose__feature-card">
+              <div class="why-choose__feature-icon">
+                <i class="fas fa-clock"></i>
+              </div>
+              <div class="why-choose__feature-content">
+                <h3 class="why-choose__feature-title">Сроки</h3>
+                <p class="why-choose__feature-description">
+                  Строим строго по графику, фиксируем даты в договоре
+                </p>
+              </div>
+            </div>
+
+            <div class="why-choose__feature-card">
+              <div class="why-choose__feature-icon">
+                <i class="fas fa-cog"></i>
+              </div>
+              <div class="why-choose__feature-content">
+                <h3 class="why-choose__feature-title">Качество</h3>
+                <p class="why-choose__feature-description">
+                  Современные технологии и контроль на каждом этапе
+                </p>
+              </div>
+            </div>
+
+            <div class="why-choose__feature-card">
+              <div class="why-choose__feature-icon">
+                <i class="fas fa-search"></i>
+              </div>
+              <div class="why-choose__feature-content">
+                <h3 class="why-choose__feature-title">Прозрачность</h3>
+                <p class="why-choose__feature-description">
+                  Честные сметы и регулярные отчёты без скрытых затрат
+                </p>
+              </div>
+            </div>
+
+            <div class="why-choose__feature-card">
+              <div class="why-choose__feature-icon">
+                <i class="fas fa-comments"></i>
+              </div>
+              <div class="why-choose__feature-content">
+                <h3 class="why-choose__feature-title">Сопровождение</h3>
+                <p class="why-choose__feature-description">
+                  Сопровождаем проект от идеи до ввода в эксплуатацию
+                </p>
+              </div>
+            </div>
+
+            <!-- Image Card -->
+            <div class="why-choose__image-card">
+              <img src="assets/images/why-2.png" alt="Строительство" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Geography Section -->
+      <section class="geography">
+        <div class="container">
+          <div class="geography__header">
+            <div class="geography__text">
+              <h2 class="geography__title">География строительства</h2>
+              <p class="geography__subtitle">
+                Мы реализуем проекты по всей стране: Москва, Санкт-Петербург, Казань, Чебоксары,
+                Йошкар-Ола, Самара, Екатеринбург, Владивосток и другие города. Каждый новый проект
+                мы проектируем с учётом особенностей региона и создаём комфортное пространство для
+                жизни и работы.
+              </p>
+            </div>
+            <div class="geography__controls">
+              <div class="geography__navigation">
+                <button class="geography__nav-btn geography__nav-btn--prev" type="button">
+                  <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="geography__nav-btn geography__nav-btn--next" type="button">
+                  <i class="fas fa-chevron-right"></i>
+                </button>
+              </div>
+              <button class="geography__more-btn">Узнать больше</button>
+            </div>
+          </div>
+
+          <div class="geography__slider swiper">
+            <div class="geography__wrapper swiper-wrapper">
+              <div class="geography__slide swiper-slide">
+                <div class="geography-card">
+                  <div class="geography-card__image">
+                    <img src="assets/images/geo-build-1.png" alt="ЖК Чехов" />
+                  </div>
+                  <div class="geography-card__overlay"></div>
+                  <div class="geography-card__content">
+                    <h3 class="geography-card__title">ЖК «Чехов»</h3>
+                    <p class="geography-card__location">Чебоксары (2024)</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="geography__slide swiper-slide">
+                <div class="geography-card">
+                  <div class="geography-card__image">
+                    <img src="assets/images/geo-build-2.png" alt="ЖК UNO" />
+                  </div>
+                  <div class="geography-card__overlay"></div>
+                  <div class="geography-card__content">
+                    <h3 class="geography-card__title">ЖК «UNO»</h3>
+                    <p class="geography-card__location">Казань (2022)</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="geography__slide swiper-slide">
+                <div class="geography-card">
+                  <div class="geography-card__image">
+                    <img src="assets/images/geo-build-3.png" alt="ЖК Княжино" />
+                  </div>
+                  <div class="geography-card__overlay"></div>
+                  <div class="geography-card__content">
+                    <h3 class="geography-card__title">ЖК «Княжино»</h3>
+                    <p class="geography-card__location">Йошкар-Ола (2021-2024)</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="geography__slide swiper-slide">
+                <div class="geography-card">
+                  <div class="geography-card__image">
+                    <img src="assets/images/geo-build-4.png" alt="ЖК Казань" />
+                  </div>
+                  <div class="geography-card__overlay"></div>
+                  <div class="geography-card__content">
+                    <h3 class="geography-card__title">ЖК «Казань»</h3>
+                    <p class="geography-card__location">Казань (2023)</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonial Section -->
+      <section class="testimonial">
+        <div class="container">
+          <div class="testimonial__content">
+            <div class="testimonial__image">
+              <img
+                src="assets/images/director.png"
+                alt="Директор компании"
+                class="testimonial__img" />
+            </div>
+            <div class="testimonial__text">
+              <blockquote class="testimonial__quote">
+                В СК ПИК мы разрабатываем проекты, в которых каждый элемент продуман до мелочей,
+                чтобы подчеркнуть индивидуальность и стиль наших клиентов.
+              </blockquote>
+              <div class="testimonial__author">
+                <div class="testimonial__name">Иванов Иван</div>
+                <div class="testimonial__position">Директор компании</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Video Testimonials Section -->
+      <section class="video-testimonials">
+        <div class="container">
+          <div class="video-testimonials__header">
+            <h2 class="video-testimonials__title">Что говорят наши клиенты?</h2>
+          </div>
+          <div class="video-testimonials__grid">
+            <div class="video-testimonial">
+              <div class="video-testimonial__preview">
+                <img
+                  src="assets/images/video-1.png"
+                  alt="Отзыв клиента"
+                  class="video-testimonial__image" />
+                <div class="video-testimonial__play-btn">
+                  <i class="fas fa-play"></i>
+                </div>
+              </div>
+              <div class="video-testimonial__content">
+                <blockquote class="video-testimonial__quote">
+                  Благодарим за честность и качество! Всё по договору, без скрытых платежей. Дом
+                  получился тёплым, уютным именно таким, как хотели!
+                </blockquote>
+                <div class="video-testimonial__author">
+                  <div class="video-testimonial__name">Алексей и Марина</div>
+                  <div class="video-testimonial__location">Казань</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="video-testimonial">
+              <div class="video-testimonial__preview">
+                <img
+                  src="assets/images/video-2.png"
+                  alt="Отзыв клиента"
+                  class="video-testimonial__image" />
+                <div class="video-testimonial__play-btn">
+                  <i class="fas fa-play"></i>
+                </div>
+              </div>
+              <div class="video-testimonial__content">
+                <blockquote class="video-testimonial__quote">
+                  Выбрали этот проект и не пожалели! Команда сработала профессионально, всегда на
+                  связи, всё вовремя. Уже переехали и счастливы!
+                </blockquote>
+                <div class="video-testimonial__author">
+                  <div class="video-testimonial__name">Олег и Наталья</div>
+                  <div class="video-testimonial__location">Чебоксары</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="video-testimonial">
+              <div class="video-testimonial__preview">
+                <img
+                  src="assets/images/video-3.png"
+                  alt="Отзыв клиента"
+                  class="video-testimonial__image" />
+                <div class="video-testimonial__play-btn">
+                  <i class="fas fa-play"></i>
+                </div>
+              </div>
+              <div class="video-testimonial__content">
+                <blockquote class="video-testimonial__quote">
+                  Переживали за сроки, но зря! Всё построили даже раньше, чем обещали. Спасибо за
+                  комфорт, профессионализм и поддержку!
+                </blockquote>
+                <div class="video-testimonial__author">
+                  <div class="video-testimonial__name">Сергей и Марина</div>
+                  <div class="video-testimonial__location">Йошкар-Ола</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Form Section -->
+      <section class="contact-form">
+        <div class="container">
+          <div class="contact-form__content">
+            <div class="contact-form__left">
+              <div class="contact-form__header">
+                <h2 class="contact-form__title">Остались вопросы?</h2>
+                <p class="contact-form__description">
+                  Укажите ваши контакты и наш менеджер свяжется с вами, чтобы ответить на все ваши
+                  вопросы.
+                </p>
+              </div>
+
+              <div class="contact-form__managers">
+                <div class="contact-form__manager">
+                  <img
+                    src="assets/images/avatar1.jpg"
+                    alt="Менеджер"
+                    class="contact-form__avatar" />
+                </div>
+                <div class="contact-form__manager">
+                  <img
+                    src="assets/images/avatar2.jpg"
+                    alt="Менеджер"
+                    class="contact-form__avatar" />
+                </div>
+                <div class="contact-form__manager">
+                  <img
+                    src="assets/images/avatar3.jpg"
+                    alt="Менеджер"
+                    class="contact-form__avatar" />
+                </div>
+              </div>
+
+              <form class="contact-form__form">
+                <div class="contact-form__inputs">
+                  <div class="contact-form__input-group">
+                    <input
+                      type="text"
+                      class="contact-form__input"
+                      placeholder="Ваше имя"
+                      required />
+                  </div>
+                  <div class="contact-form__input-group">
+                    <input
+                      type="tel"
+                      class="contact-form__input contact-form__input--phone"
+                      placeholder="+7 (999) 999-99-99"
+                      required />
+                  </div>
+                  <button type="submit" class="contact-form__submit">Заказать звонок</button>
+                </div>
+                <p class="contact-form__privacy">
+                  Нажимая кнопку «Заказать звонок», вы соглашаетесь с
+                  <a href="#" class="contact-form__privacy-link">Политикой конфиденциальности</a>
+                </p>
+              </form>
+            </div>
+
+            <div class="contact-form__right">
+              <div class="contact-form__phone">
+                <img
+                  src="assets/images/form-phone.png"
+                  alt="Телефон"
+                  class="contact-form__phone-image" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"></script>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <!-- Custom JS -->
     <script src="js/main.js"></script>
